@@ -1,3 +1,7 @@
+# Overview
+
+Generate packages (.deb, .rpm, etc.) for any InfluxDB branch, tag, or commit.  (requires Docker)
+
 # Usage
 
 Make a directory to receive the output packages.  I'm using ~/vmshare in this example but you can use any directory that suits.  Be sure to update pkg-influxdb.sh accordingly.
