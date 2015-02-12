@@ -12,8 +12,7 @@ done
 
 shift $(($OPTIND - 1))
 
-rvm use 1.9.3@influxdb
-gem install --no-rdoc --no-ri fpm
+#gem install --no-rdoc --no-ri fpm
 
 mkdir -p go/src/github.com/influxdb && cd go/src/github.com/influxdb
 git clone http://github.com/influxdb/influxdb && cd influxdb
@@ -22,4 +21,10 @@ if [ -n "$tag" ]; then
 	git checkout $tag
 fi
 
-./configure && make package && cp -r packages /vmshare
+cd cmd/influxd
+
+go get -u -f -v
+go build
+cp influxd /vmshare
+
+go install
