@@ -23,7 +23,8 @@ fi
 
 cd cmd/influxd
 
-go get -u -f
+go get -u -f -v
 go build
-
 cp influxd /vmshare
+
+go install
