@@ -2,7 +2,7 @@
 
 set -e
 
-while getopts ":t:" o; do
+while getopts ":t:v:" o; do
 	case "$o" in
 		t)
 			tag="${OPTARG}"
@@ -14,6 +14,11 @@ while getopts ":t:" o; do
 done
 
 shift $(($OPTIND - 1))
+
+if [ -z "$ver" ]; then
+	echo pkg-influxdb.sh -v <version> [ -t <tag or sha1> ]
+	exit 1
+fi
 
 rvm use 1.9.3@influxdb
 gem install --no-rdoc --no-ri fpm
