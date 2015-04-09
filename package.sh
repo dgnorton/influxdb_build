@@ -243,14 +243,6 @@ generate_postinstall_script $VERSION
 ###########################################################################
 # Create the actual packages.
 
-echo -n "Commence creation of $ARCH packages, version $VERSION? [Y/n] "
-read response
-response=`echo $response | tr 'A-Z' 'a-z'`
-if [ "x$response" == "xn" ]; then
-    echo "Packaging aborted."
-    cleanup_exit 1
-fi
-
 if [ $ARCH == "i386" ]; then
     rpm_package=influxdb-$VERSION-1.i686.rpm
     debian_package=influxdb_${VERSION}_i686.deb
