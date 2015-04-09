@@ -16,7 +16,7 @@ done
 shift $(($OPTIND - 1))
 
 if [ -z "$ver" ]; then
-	echo pkg-influxdb.sh -v <version> [ -t <tag or sha1> ]
+	echo 'usage: pkg-influxdb.sh -v <version> [ -t <tag or sha1> ]'
 	exit 1
 fi
 
