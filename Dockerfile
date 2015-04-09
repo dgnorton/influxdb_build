@@ -24,3 +24,6 @@ RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm && rvm install ruby-1.9.3
 
 ADD pkg-influxdb.sh /
 RUN chmod ug+rwx /pkg-influxdb.sh
+
+ADD package.sh /
+RUN chmod ug+rx /package.sh

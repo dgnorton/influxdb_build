@@ -7,6 +7,9 @@ while getopts ":t:" o; do
 		t)
 			tag="${OPTARG}"
 			;;
+		v)
+			ver="${OPTARG}"
+			;;
 	esac
 done
 
@@ -22,4 +25,6 @@ if [ -n "$tag" ]; then
 	git checkout $tag
 fi
 
-./configure && make package && cp -r packages /vmshare
+#./configure && make package && cp -r packages /vmshare
+
+cp /package.sh . && GOPATH=/go ./package.sh $ver
