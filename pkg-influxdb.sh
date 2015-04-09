@@ -32,4 +32,4 @@ fi
 
 #./configure && make package && cp -r packages /vmshare
 
-cp /package.sh . && GOPATH=/go ./package.sh $ver
+cp /package.sh . && GOPATH=/go ./package.sh $ver && cp *.deb *.rpm /vmshare
